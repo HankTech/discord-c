@@ -1,6 +1,17 @@
 module.exports = {
   root: true,
-  extends: '@react-native-community',
+
+  env: {
+    browser: true,
+    es2021: true,
+    node: true
+  },
+
+  extends: [
+    'plugin:react/recommended',
+    './node_modules/standard/eslintrc.json'
+  ],
+
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   overrides: [
@@ -9,8 +20,8 @@ module.exports = {
       rules: {
         '@typescript-eslint/no-shadow': ['error'],
         'no-shadow': 'off',
-        'no-undef': 'off',
-      },
-    },
-  ],
-};
+        'no-undef': 'off'
+      }
+    }
+  ]
+}
